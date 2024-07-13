@@ -1,0 +1,5 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "arduino.defaultBaudRate": 9600,
+    "java.debug.settings.onBuildFailureProceed": true
+}

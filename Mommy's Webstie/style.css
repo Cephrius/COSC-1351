@@ -1,0 +1,346 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.45)),url(Images/backdrop.jpg);
+    background-size: auto;
+    background-position: center;
+    
+}   
+
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.Logo{
+    width: 120px;
+    cursor: pointer;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after{
+    content: '';
+    height: 1px;
+    width: 0%;
+    background: #44a832;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover:after{
+    width: 100%;
+}
+
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff
+}
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.content p{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span{
+    background: #009688;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+button:hover span{
+    width: 100%;
+}
+
+button:hover{
+    border: none;
+}
+
+.aboutuspage{
+    width: 100%;
+    font-size: 45px;
+    text-align: center;
+    color: #fff;
+    transform: translateY(27%);
+    word-wrap: normal;
+          
+}
+.paragraph{
+    margin-left: 27%;
+    bottom: -50px;
+    width: 20%;
+    text-align: left;
+    line-height: 1.5;
+    position: relative;
+    
+}
+.paragraph1{
+    margin-left: 27%;
+    bottom: -50px;
+    width: 25%;
+    text-align: left;
+    line-height: 1.5;
+    position: relative;
+}
+.aboutuspage h2{
+    font-size: 25px;   
+}
+.ourgoalspage h2{
+    font-size: 45px;
+}
+.solvingtheproblempage h2{
+    font-size: 25px;
+}
+
+.pic3{
+    position: absolute;
+        width: 800px;
+        left: 1700px;
+        top: 180px;
+        border-radius: 30px;
+}
+.video{
+    position: absolute;
+    left: 1200px;
+    top: 90px;
+
+}
+.meme1{
+        position: absolute;
+        width: 550px;
+        left: 2100px;
+        top: 540px;
+}
+.meme2{
+    position: absolute;
+    width: 550px;
+    left: 1650px;
+    top: 1000px;
+}
+.tweet{
+    position: absolute;
+    width: 1000px;
+    left: 900px;
+    top: 300px;
+}
+.trashimg{
+    position: absolute;
+    width: 750px;
+    left: 1550px;
+    top: 600px;
+
+}
+.underline{
+    text-decoration: underline;
+    text-decoration-color: #44a832;
+    
+}
+.ourgoalspage{
+    width: 100%;
+    font-size: 45px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 25.2%;
+    word-wrap: normal;
+}
+
+.solvingtheproblempage{
+    width: 100%;
+    font-size: 45px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 25.2%;
+    word-wrap: normal;
+}
+
+.solvingparagraph{
+    margin-left: 20%;
+    width: 38%;
+    text-align: left;
+    line-height: 1.5;
+    position: relative;
+}
+.contactuspage{
+    width: 100%;
+    font-size: 45px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 25.2%;
+    word-wrap: normal;
+
+}
+.workscitedpage{
+    width: 100%;
+    font-size: 45px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 25.2%;
+    word-wrap: normal;
+}
+.mlareference{
+    padding-left: 36px;
+    text-indent: -96px;
+    margin-top: 2%;
+    margin-left: 30%;
+    width: 50%;
+    text-align: left;
+    position: relative;
+}
+.pricingpage{
+    width: 85%;
+    font-size: 45px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 25.2%;
+    word-wrap: normal;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create three columns of equal width */
+  .columns {
+    float: left;
+    width: 33.3%;
+    padding: 8px;
+  }
+  
+  /* Style the list */
+  .price {
+    list-style-type: none;
+    border: 1px solid #000;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  /* Add shadows on hover */
+  .price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+  }
+  
+  /* Pricing header */
+  .price .header {
+    background-color: #04AA6D;
+    color: White;
+    font-size: 25px;
+  }
+  
+  /* List items */
+  .price li {
+    border-bottom: 1px solid #000;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Grey list item */
+  .price .grey {
+    background-color: #000;
+    font-size: 20px;
+  }
+  
+  /* The "Sign Up" button */
+  .button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  /*
+   Change the width of the three columns to 100%
+  (to stack horizontally on small screens) 
+  @media only screen and (max-width: 600px) {
+    .columns {
+      width: 75%;
+    }*/
+
+    .postions1{
+        position: absolute;
+        top: 1000px;
+        left: 200px;
+        width: 75%;
+    }
+    .postions2{
+        position: relative;
+        top: 0.50px;
+        left: 205px;
+        width: 95%;
+    }
+    .postions3{
+        position: relative;
+        top: -457px;
+        left: 1550px;
+        width: 100%;
+    }
+    .postions2 li{
+        color: white;
+    }
+    .postions1 li{
+        color: white;
+    }
+  
+
+ 

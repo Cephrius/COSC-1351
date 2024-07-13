@@ -1,0 +1,261 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "linkedvsArray",
+            "request": "launch",
+            "mainClass": "dataStructures.linkedvsArray",
+            "projectName": "COSC-1351_414b8828"
+        },
+        {
+            "type": "java",
+            "name": "arrayDynamic",
+            "request": "launch",
+            "mainClass": "dataStructures.arrayDynamic",
+            "projectName": "COSC-1351_414b8828"
+        },
+        {
+            "type": "java",
+            "name": "arrayDynamic",
+            "request": "launch",
+            "mainClass": "dataStructures.arrayDynamic",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "LinkedListss",
+            "request": "launch",
+            "mainClass": "dataStructures.LinkedListss",
+            "projectName": "COSC-1351_414b8828"
+        },
+        {
+            "type": "java",
+            "name": "LinkedList",
+            "request": "launch",
+            "mainClass": "dataStructures.LinkedList",
+            "projectName": "COSC-1351_414b8828"
+        },
+        {
+            "type": "java",
+            "name": "PriortyQueues",
+            "request": "launch",
+            "mainClass": "dataStructures.PriortyQueues",
+            "projectName": "COSC-1351_414b8828"
+        },
+        {
+            "type": "java",
+            "name": "queues",
+            "request": "launch",
+            "mainClass": "dataStructures.queues",
+            "projectName": "COSC-1351_414b8828"
+        },
+        {
+            "type": "java",
+            "name": "queues",
+            "request": "launch",
+            "mainClass": "dataStructures.queues",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "stack",
+            "request": "launch",
+            "mainClass": "dataStructures.stack",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "TwitchURL",
+            "request": "launch",
+            "mainClass": "twitchURL.TwitchURL",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "TwitchURL",
+            "request": "launch",
+            "mainClass": "Python.dataStructures.TwitchURL",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "expressions",
+            "request": "launch",
+            "mainClass": "expressions",
+            "projectName": "COSC-1351_414b8828"
+        },
+        {
+            "type": "java",
+            "name": "arrayList",
+            "request": "launch",
+            "mainClass": "arrayList",
+            "projectName": "COSC-1351_414b8828"
+        },
+        {
+            "type": "java",
+            "name": "foreachloop",
+            "request": "launch",
+            "mainClass": "foreachloop",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "twodarraylist",
+            "request": "launch",
+            "mainClass": "twodarraylist",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "arrayList",
+            "request": "launch",
+            "mainClass": "arrayList",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "wrapperclasses",
+            "request": "launch",
+            "mainClass": "wrapperclasses",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "stringMethods",
+            "request": "launch",
+            "mainClass": "stringMethods",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "twodarrays",
+            "request": "launch",
+            "mainClass": "twodarrays",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "arrays",
+            "request": "launch",
+            "mainClass": "arrays",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "nestedloops",
+            "request": "launch",
+            "mainClass": "nestedloops",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "forloops",
+            "request": "launch",
+            "mainClass": "forloops",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "whileloops",
+            "request": "launch",
+            "mainClass": "whileloops",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "logicaloperators",
+            "request": "launch",
+            "mainClass": "logicaloperators",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "switches",
+            "request": "launch",
+            "mainClass": "switches",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "ifstatements",
+            "request": "launch",
+            "mainClass": "ifstatements",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "randomnumbers",
+            "request": "launch",
+            "mainClass": "randomnumbers",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "mathclass",
+            "request": "launch",
+            "mainClass": "mathclass",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "GUIinto",
+            "request": "launch",
+            "mainClass": "GUIinto",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "expressions",
+            "request": "launch",
+            "mainClass": "expressions",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "userinput",
+            "request": "launch",
+            "mainClass": "userinput",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "swaptwovariables",
+            "request": "launch",
+            "mainClass": "swaptwovariables",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "type": "java",
+            "name": "variables",
+            "request": "launch",
+            "mainClass": "variables",
+            "projectName": "COSC-1351_eb7861c8"
+        },
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/path/to/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ],
+    "version": "2.0.0"
+}

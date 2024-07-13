@@ -1,0 +1,10 @@
+time
+people 
+way
+day 
+man
+thing 
+woman
+life 
+child
+world 
