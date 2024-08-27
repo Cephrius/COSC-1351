@@ -8,7 +8,7 @@ class ShoppingCartGUI(Frame):
         
         
     
-        self.tomatoPhoto = PhotoImage("C:\\Users\\theac\\OneDrive\\Documents\\COSC-1351\\Python\\Shopping Basket GUI\\shoppingbasketphotos\\417-4173228_can-of-campbells-tomato-soup-hd-png-download.png")
+        self.tomatoPhoto = PhotoImage("/COSC-1351/Python/Shopping Basket GUI/shoppingbasketphotos/soup.png")
         self.tomatolabel = Label(self.master,image = self.tomatoPhoto)
         
         self.storeAmountPhoto =  PhotoImage("C:\\Users\\theac\\OneDrive\\Documents\\COSC-1351\\Python\\Shopping Basket GUI\\shoppingbasketphotos\\png-transparent-supermarket-shopping-basket-cartoon-shopping-basket-shopping-basket-illustration-supermarket-thumbnail.png")
