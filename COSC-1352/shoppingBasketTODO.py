@@ -138,14 +138,25 @@ class ShoppingBasket:
                 return True
             else: 
                 return False
+            
+    # A method to fileter items based on their expiry date
+    def filterItemByExpriry(self, year, month, day):
+        # TODO: Implement this method
+        # Filter the items in the basket based on their expiry date.
+        # Return the filtered items.
+        for i in range(len(self.items)):
+            pass
 
 class Item:
     # Constructor
-    def __init__(self, name, description, price,tax):
+    def __init__(self, name, description, price,tax, year, month, day):
         self.name = name
         self.description = description
         self.price = price # price subtotal
         self.tax = tax #tax percentage
+        self.exprireYear = year
+        self.exprireMonth = month
+        self.exprireDay = day
         
 
 # ======================
