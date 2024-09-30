@@ -1,7 +1,9 @@
 a=[]
+
 for i in range(10):
     a.append(i)
 print(a)
+
 # /*************  ✨ Codeium Command 🌟  *************/
 # create a linked list from a list
 # the linked list is defined as a sequence of nodes
