@@ -29,17 +29,19 @@ class MainGUI(Frame):
             Grid.columnconfigure(self, col, weight=1)
         # the first row
         #(
-        img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/0.gif")
+        img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/lpr.gif")
         button = Button(self, bg="white", image=img, borderwidth=0, \
                         highlightthickness=0, activebackground="white", command=lambda:self.process("("))
         button.image = img
         button.grid(row=1, column=0, sticky=N + S + E + W)
+        
         #)
         img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/rpr.gif")
         button = Button(self, bg="white", image=img, borderwidth=0, \
                         highlightthickness=0, activebackground="white", command=lambda:self.process(")"))
         button.image = img
         button.grid(row=1, column=1, sticky=N + S + E + W)
+        
         #AC(clear)
         img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/clr.gif")
         button = Button(self, bg="white", image=img, borderwidth=0, \
@@ -47,12 +49,32 @@ class MainGUI(Frame):
         
         button.image = img
         button.grid(row=1, column=2, sticky=N + S + E + W)
+        
         #Power (**)
         img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/pow.gif")
         button = Button(self, bg="white", image=img, borderwidth=0, \
                         highlightthickness=0, activebackground="white", command=lambda:self.process("**"))
         button.image = img
         button.grid(row=1, column=3, sticky=N + S + E + W)
+        
+        
+        #Backspace (<---)
+        img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/back.gif")
+        button = Button(self, bg="white", image=img, borderwidth=0, \
+                        highlightthickness=0, activebackground="white", command=lambda: self.display.config(text=self.display["text"][:-1]))
+        button.image = img
+        button.grid(row=1, column=3, sticky=N + S + E + W)
+        
+        #Square (x^2)
+        img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/sqr.gif")
+        button = Button(self, bg="white", image=img, borderwidth=0, \
+                        highlightthickness=0, activebackground="white", command=lambda:self.process("x**2"))
+        button.image = img
+        button.grid(row=1, column=3, sticky=N + S + E + W)
+        
+        
+        
+        
 	# the second row
 	# 7
         img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/7.gif")
@@ -78,6 +100,9 @@ class MainGUI(Frame):
 			highlightthickness=0, activebackground="white", command=lambda:self.process("/"))
         button.image = img
         button.grid(row=2, column=3, sticky=N + S + E + W)
+        
+        
+        
 	# the third row
 	# 4
         img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/4.gif")
@@ -103,6 +128,9 @@ class MainGUI(Frame):
 			highlightthickness=0, activebackground="white", command=lambda:self.process("*"))
         button.image = img
         button.grid(row=3, column=3, sticky=N + S + E + W)
+        
+        
+        
 	# the fourth row
 	# 1
         img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/1.gif")
@@ -128,6 +156,9 @@ class MainGUI(Frame):
 			highlightthickness=0, activebackground="white", command=lambda:self.process("-"))
         button.image = img
         button.grid(row=4, column=3, sticky=N + S + E + W)
+        
+        
+        
 	# the fifth row
 	# 0
         img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/0.gif")
@@ -155,6 +186,8 @@ class MainGUI(Frame):
         button.grid(row=5, column=3, sticky=N + S + E + W)
 
         self.pack(fill=BOTH, expand=1)
+        
+        
 
     #processes button presses
     #@staticmethod
