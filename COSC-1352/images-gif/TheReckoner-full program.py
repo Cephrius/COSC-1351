@@ -1,7 +1,7 @@
 ###########################################################################################
 # Name: Chiedozie Ehileme       
 # Date: October 26 2024
-# Description: 
+# Description: Completed python Calcluator 
 ###########################################################################################
 from tkinter import *
 from tkinter import PhotoImage
