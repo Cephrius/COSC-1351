@@ -1,10 +1,11 @@
 ###########################################################################################
 # Name: Chiedozie Ehileme       
 # Date: October 26 2024
-# Description: 
+# Description: Completed python Calcluator 
 ###########################################################################################
 from tkinter import *
 from tkinter import PhotoImage
+import math
 
 
 # the main GUI
@@ -14,11 +15,54 @@ class MainGUI(Frame):
         Frame.__init__(self, parent, bg="white")
         self.setupGUI()
 
+
+    # use to calculate reciprocal 
+    def calculate_reciprocal(self):
+        try:
+                # Get the current value from the display
+                number = float(self.display["text"])
+                # Calculate the reciprocal
+                reciprocal = 1 / number
+                # Display the result as a string
+                self.display.config(text=str(reciprocal))
+        except (ValueError, ZeroDivisionError):
+                # Handle cases where the display is empty or when dividing by zero
+                self.display.config(text="ERROR")
+                
+     # calcluate square root 
+    def calculate_square_root(self):
+        try:
+                # Get the current value from the display
+                number = float(self.display["text"])
+                # Calculate the square root
+                square_root = math.sqrt(number)
+                # Display the result as a string
+                self.display.config(text=str(square_root))
+        except ValueError:
+                # Handle cases where the display is empty or when dividing by zero
+                self.display.config(text="ERROR")
+                
+    # now calclute percentage of a number displayed
+    def calculate_percentage(self):
+        try:
+                # Get the current value from the display
+                number = float(self.display["text"])
+                # Calculate the percentage
+                percentage = number / 100
+                # Display the result as a string
+                self.display.config(text=str(percentage))
+        except ValueError:
+                # Handle cases where the display is empty or when dividing by zero
+                self.display.config(text="ERROR")
+        
+    
+
     # sets up the GUI
     def setupGUI(self):
+    
         self.display = Label(self, text="", anchor=E, bg="white", \
                              height=8, width=15, font=('Comic Sans',24))
-        self.display.grid(row=0, column=0, columnspan=4, sticky=E + W + N + S)
+        self.display.grid(row=0, column=0, columnspan=5, sticky=E + W + N + S)
 
         #configure the rows and columns of the Frame to adjust to the window
         #there are 6 rows (0 through 5)
@@ -61,16 +105,10 @@ class MainGUI(Frame):
         #Backspace (<---)
         img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/back.gif")
         button = Button(self, bg="white", image=img, borderwidth=0, \
-                        highlightthickness=0, activebackground="white", command=lambda: self.display.config(text=self.display["text"][:-1]))
+                        highlightthickness=0, activebackground="white",  command=lambda: self.display.config(text=self.display["text"][:-1]))
         button.image = img
-        button.grid(row=1, column=3, sticky=N + S + E + W)
+        button.grid(row=1, column=4 ,sticky=N + S + E + W)
         
-        #Square (x^2)
-        img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/sqr.gif")
-        button = Button(self, bg="white", image=img, borderwidth=0, \
-                        highlightthickness=0, activebackground="white", command=lambda:self.process("x**2"))
-        button.image = img
-        button.grid(row=1, column=3, sticky=N + S + E + W)
         
         
         
@@ -94,13 +132,20 @@ class MainGUI(Frame):
 			highlightthickness=0, activebackground="white", command=lambda:self.process("9"))
         button.image = img
         button.grid(row=2, column=2, sticky=N + S + E + W)
+        
+        #Square (x^2)
+        img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/sqr.gif")
+        button = Button(self, bg="white", image=img, borderwidth=0, \
+                        highlightthickness=0, activebackground="white", command=lambda:self.process("**2"))
+        button.image = img
+        button.grid(row=2, column=3, sticky=N + S + E + W)
+        
 	# /
         img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/div.gif")
         button = Button(self, bg="white", image=img, borderwidth=0, \
 			highlightthickness=0, activebackground="white", command=lambda:self.process("/"))
         button.image = img
-        button.grid(row=2, column=3, sticky=N + S + E + W)
-        
+        button.grid(row=2, column=4, sticky=N + S + E + W)
         
         
 	# the third row
@@ -127,10 +172,17 @@ class MainGUI(Frame):
         button = Button(self, bg="white", image=img, borderwidth=0, \
 			highlightthickness=0, activebackground="white", command=lambda:self.process("*"))
         button.image = img
+        button.grid(row=3, column=4, sticky=N + S + E + W)
+        
+        # This function is for the sqrt of a number
+        img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/sqrt.gif")
+        button = Button(self, bg="white", image=img, borderwidth=0, \
+                        highlightthickness=0, activebackground="white", command=lambda:self.calculate_square_root())
+        button.image = img
         button.grid(row=3, column=3, sticky=N + S + E + W)
-        
-        
-        
+                        
+                        
+                                
 	# the fourth row
 	# 1
         img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/1.gif")
@@ -150,12 +202,21 @@ class MainGUI(Frame):
 			highlightthickness=0, activebackground="white", command=lambda:self.process("3"))
         button.image = img
         button.grid(row=4, column=2, sticky=N + S + E + W)
+        
+        
+        # This function is for the reciprocal of a number
+        img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/reciprocal.gif")
+        button = Button(self, bg="white", image=img, borderwidth=0,
+                        highlightthickness=0, activebackground="white", command=lambda: self.calculate_reciprocal())
+        button.image = img
+        button.grid(row=4, column=3, sticky=N + S + E + W)
+        
 	# -
         img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/sub.gif")
         button = Button(self, bg="white", image=img, borderwidth=0, \
 			highlightthickness=0, activebackground="white", command=lambda:self.process("-"))
         button.image = img
-        button.grid(row=4, column=3, sticky=N + S + E + W)
+        button.grid(row=4, column=4, sticky=N + S + E + W)
         
         
         
@@ -178,12 +239,21 @@ class MainGUI(Frame):
 			highlightthickness=0, activebackground="white", command=lambda:self.process("="))
         button.image = img
         button.grid(row=5, column=2, sticky=N + S + E + W)
+        
+        # function for finding percent of a number
+        img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/percent.gif")
+        button = Button(self, bg="white", image=img, borderwidth=0, \
+                        highlightthickness=0, activebackground="white", command=lambda:self.calculate_percentage())
+        button.image = img
+        button.grid(row=5, column=3, sticky=N + S + E + W)
+        
+        
 	# +
         img = PhotoImage(file="COSC-1351/COSC-1352/images-gif/add.gif")
         button = Button(self, bg="white", image=img, borderwidth=0, \
 			highlightthickness=0, activebackground="white", command=lambda:self.process("+"))
         button.image = img
-        button.grid(row=5, column=3, sticky=N + S + E + W)
+        button.grid(row=5, column=4, sticky=N + S + E + W)
 
         self.pack(fill=BOTH, expand=1)
         
@@ -192,26 +262,20 @@ class MainGUI(Frame):
     #processes button presses
     #@staticmethod
     def process(self, button):
-        #AC clear the display
-        if (button == "AC"):
-            #clear the display
-            self.display["text"] = ""
-        # = starts an evaluation of whatever is on the display
-        elif (button == "="):
-            #get the expression in the display
-            expr = self.display["text"]
-            #evaluate the expresion
-            try:
-                result = eval(expr)
-                #store the result to the display
-                self.display["text"] = str(result)
-            except:
-                self.display["text"] = "ERROR!!"
-            #note the error in the display
-            #self.display["text"] = "ERROR"
-        #otherwise, just tack on the appropriate operand/operator
-        else:
-            self.display["text"] += button
+    # AC clears the display
+        if button == "AC":
+                self.display["text"] = ""
+        # "=" starts an evaluation of whatever is on the display
+        elif button == "=":
+                expr = self.display["text"]
+                try:
+                        result = eval(expr)
+                        self.display["text"] = str(result)
+                except:
+                        self.display["text"] = "ERROR!!"
+        else:   
+                # Concatenate the button value as a string
+                self.display["text"] += str(button)
 
 
 ##############################

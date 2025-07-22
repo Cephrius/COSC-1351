@@ -14,6 +14,7 @@ class ShoppingBasket:
     # Iterate over the items list and return the index if the item is found.
     # Compare items based on their name attribute.
     # If the item is not found, return -1.
+    
     # If the item is found, return the index.
         if isinstance(item, str):
             for i in range(len(self.items)):
