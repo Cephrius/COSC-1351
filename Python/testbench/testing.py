@@ -1,54 +1,90 @@
-"""import random
+#!/usr/bin/env python3
+"""
+Decode the secret message from a published Google Doc that lists
+(x-coordinate, Character, y-coordinate) rows.
 
-
-## Python number Guessing Game
-
-guessed_number = random.randint(1,50)
-
-while True:
-    player1_points = 0
-    player2_points = 0
-
-    print(guessed_number)
-    player1 = int(input('Player 1, Guess the number between 1 and 50: \n'))
-    if player1 == guessed_number:
-        print("Player1 guessed the Correct number, Plus 1 point \n")
-        player1_points += 1
-        guessed_number = random.randint(1, 50)
-    elif player1 != guessed_number:
-        print("Incorrect number \n")
-        player2 = int(input('Player 2, Guess the number between 1 and 50: \n'))
-        if player2 == guessed_number:
-            print("Player2 guessed the Correct number, Plus 1 point \n")
-            player2_points += 1
-            guessed_number = random.randint(1, 50)
-        elif player2 != guessed_number:
-            print("Incorrect number \n")
-
-
-    if player1_points == 1:
-        print("Player 1 Wins")
-        break
-    elif player1_points == 1:
-        print("Player 2 Wins")
-        break
-
+Usage:
+    python decode_secret.py "https://docs.google.com/document/d/e/2PACX-1vRPzbNQcx5UriHSbZ-9vmsTow_R6RRe7eyAU60xIF9Dlz-vaHiHNO2TKgDi7jy4ZpTpNqM7EvEcfr_p/pub"
 """
 
-import random
+import sys
+import re
+from typing import Dict, Tuple
+try:
+    import requests
+    from bs4 import BeautifulSoup
+except ImportError:
+    print("Please install dependencies first: pip install requests beautifulsoup4")
+    sys.exit(1)
 
-"""
-start_number = 10000000
+def decode_grid(doc_url: str) -> str:
+    # 1) fetch HTML
+    html = requests.get(doc_url, timeout=30).text
 
-for i in range(1 , start_number):
-    coin = random.randint(0,1)
-    if coin == 1:
-        start_number += 1
+    # 2) parse rows — the published doc is rendered as a simple HTML flow;
+    #    grabbing all text and extracting triples is more robust than relying
+    #    on class names that can change.
+    soup = BeautifulSoup(html, "html.parser")
+    text = soup.get_text("\n")
 
-print(start_number)
-"""
+    # We expect the data in repeating chunks: x, char(█ or ░), y.
+    # Build a lightweight tokenizer that walks through numbers and block chars.
+    tokens = []
+    for line in text.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        # numbers
+        if re.fullmatch(r"-?\d+", line):
+            tokens.append(int(line))
+        # characters (block or light shade)
+        elif line in ("█", "░", " "):
+            tokens.append(line)
 
+    # 3) turn tokens into triples: (x, ch, y)
+    triples = []
+    i = 0
+    while i + 2 < len(tokens):
+        if isinstance(tokens[i], int) and isinstance(tokens[i+2], int) and isinstance(tokens[i+1], str):
+            triples.append((tokens[i], tokens[i+1], tokens[i+2]))
+            i += 3
+        else:
+            i += 1  # resync if any oddity
 
-number = random.randint(1,259)
+    if not triples:
+        raise RuntimeError("No coordinate triples found. The document format may have changed.")
 
-print(number)
+    # 4) build grid map
+    grid: Dict[Tuple[int, int], str] = {}
+    xs, ys = [], []
+    for x, ch, y in triples:
+        grid[(x, y)] = ch
+        xs.append(x); ys.append(y)
+
+    min_x, max_x = min(xs), max(xs)
+    min_y, max_y = min(ys), max(ys)
+
+    # Normalize so the smallest coordinate is at 0,0 (not necessary, but tidy)
+    width = max_x - min_x + 1
+    height = max_y - min_y + 1
+
+    lines = []
+    for y in range(min_y, max_y + 1):
+        row_chars = []
+        for x in range(min_x, max_x + 1):
+            row_chars.append(grid.get((x, y), " "))
+        lines.append("".join(row_chars).rstrip())
+
+    return "\n".join(lines)
+
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python decode_secret.py <published_google_doc_url>")
+        sys.exit(2)
+    url = sys.argv[1].strip()
+    art = decode_grid(url)
+    # Print with an explicit monospace hint (terminal is already monospace).
+    print(art)
+
+if __name__ == "__main__":
+    main()
